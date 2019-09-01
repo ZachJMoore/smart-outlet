@@ -1,8 +1,12 @@
+# Raspberry Pi powered outlet strip
+
+See the blog post [here](https://zachjmoore.com/posts/how-to-make-a-raspberry-pi-powered-outlet-strip) for a simple guide on building your own and using this software.
+
+If you have already done all the hardware setup and just want to quickly find the software setup, you can see the basic instructions below:
+
 ### Software Setup
 
-https://raspberrypi.stackexchange.com/questions/93311/switch-between-wifi-client-and-access-point-without-reboot/93312#93312
-
-Dependencies: node, forever && forever-service
+Main dependencies: node, forever && forever-service
 
 ##### Node for PiZW:
 ```
@@ -16,7 +20,7 @@ Dependencies: node, forever && forever-service
 
 ##### Both:
 ```
-npm install && sudo npm install -g forever forever-service
+$ git clone https://github.com/ZachJMoore/smart-outlet.git && cd smart-outlet && npm install && sudo npm install -g forever forever-service
 ```
 
 ### Forever Service
@@ -31,7 +35,7 @@ $ sudo forever-service install smart-outlet --script index.js
 $ sudo service smart-outlet stop && sudo forever-service delete smart-outlet
 ```
 
-##### Commands to interact with service
+##### Commands to interact with the service (do this before rebooting or shutting off)
 Start   - "sudo service smart-outlet start"
 Stop    - "sudo service smart-outlet stop"
 Status  - "sudo service smart-outlet status"
